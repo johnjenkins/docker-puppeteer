@@ -3,7 +3,7 @@
 # Initially based upon:
 # https://github.com/GoogleChrome/puppeteer/blob/master/docs/troubleshooting.md#running-puppeteer-in-docker
 
-FROM node:14.16.0-buster-slim
+FROM node:14.18.2-buster-slim
 RUN  apt-get update \
      && apt-get install -y wget gnupg ca-certificates procps libxss1 python2 git \
      && wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add - \
