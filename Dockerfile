@@ -20,7 +20,7 @@ RUN  apt-get update \
      && chmod +x /usr/sbin/wait-for-it.sh
 
 # Install Puppeteer under /node_modules so it's available system-wide
-ADD package.json package-lock.json /
+ADD package.json /
      # install pnpm globally
 RUN  npm install -g pnpm; \
      pnpm --version; \
