@@ -21,4 +21,12 @@ RUN  apt-get update \
 
 # Install Puppeteer under /node_modules so it's available system-wide
 ADD package.json package-lock.json /
-RUN npm install
+     # install pnpm globally
+RUN  npm install -g pnpm; \
+     pnpm --version; \
+     pnpm setup; \
+     mkdir -p /usr/local/share/pnpm &&\
+     export PNPM_HOME="/usr/local/share/pnpm" &&\
+     export PATH="$PNPM_HOME:$PATH"; \
+     pnpm bin -g &&\
+     pnpm install
